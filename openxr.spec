@@ -87,7 +87,7 @@ rm -fr %{buildroot}%{_libdir}/*.a
 %{_libdir}/lib*.so
 %{_mandir}/man1/*.1*
 
-%files  %{libname}
+%files -n %{libname}
 %{_libdir}/lib%{name}_loader.so.%{libmajor}{,.*}
 
 %files -n %{devname}
