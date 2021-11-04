@@ -3,14 +3,13 @@
 
 Name:           openxr
 Version:        1.0.20
-Release:        %autorelease
+Release:        1
 Summary:        An API for writing VR and AR software
 License:        ASL 2.0
 URL:            https://github.com/KhronosGroup/%{pkgname}
-Source:         %{url}/archive/refs/tags/release-%{version}.tar.gz
+Source:         https://github.com/KhronosGroup/%OpenXR-SDK-Source/archive/refs/tags/release-%{version}/OpenXR-SDK-Source-release-%{version}.tar.gz
 
 BuildRequires:  cmake
-BuildRequires:  gcc-c++
 BuildRequires:  glslang
 BuildRequires:  glslang-devel
 BuildRequires:  pkgconfig(egl)
@@ -64,17 +63,14 @@ want to compile applications using the OpenXR library.
     -DCMAKE_CXX_FLAGS="%{optflags} -Wl,--as-needed" \
     -DCMAKE_CXX_STANDARD=17 \
     -DDYNAMIC_LOADER=ON
-%cmake_build
+%make_build
 
 
 %install
-%cmake_install
+%make_install -C build
 
 # We do not want static file .a
 rm -fr %{buildroot}%{_libdir}/*.a
-
-%check
-%ctest
 
 %files
 %license LICENSE
@@ -92,6 +88,3 @@ rm -fr %{buildroot}%{_libdir}/*.a
 %{_includedir}/%{name}
 %{_libdir}/cmake/%{name}
 %{_libdir}/pkgconfig/*.pc
-
-%changelog
-%autochangelog
