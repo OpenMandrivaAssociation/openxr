@@ -1,6 +1,10 @@
 %global         pkgname        OpenXR-SDK-Source
 %global         libmajor 1
 
+%define libname %mklibname %{name} %{libmajor}
+%define devname %mklibname -d %{name}
+
+
 Name:           openxr
 Version:        1.0.20
 Release:        1
@@ -28,23 +32,25 @@ BuildRequires:  pkgconfig(xcb-dri2)
 BuildRequires:  pkgconfig(xrandr) 
 BuildRequires:  python3dist(jinja2)
 
+Requires:       %{libname}%{?_isa} = %{version}-%{release}
+
 %description
 OpenXR is an API specification for writing portable, cross-platform,
 virtual reality (VR) and augmented reality (AR) software.
 
-%package libs
+%package -n %{libname}
 Summary:        Libraries for writing VR and AR software
 
-%description libs
+%description -n %{libname}
 This package contains the library needed to run programs dynamically
 linked with OpenXR.
 
-%package devel
+%package %{devname}
 Summary:        Headers and development files of the OpenXR library
-Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
+Requires:       %{libname}%{?_isa} = %{version}-%{release}
 Provides:       %{name}-devel = %{version}-%{release}
 
-%description devel
+%description -n %{devname}
 Development files for the OpenXR library. Install this package if you
 want to compile applications using the OpenXR library.
 
@@ -81,10 +87,10 @@ rm -fr %{buildroot}%{_libdir}/*.a
 %{_libdir}/lib*.so
 %{_mandir}/man1/*.1*
 
-%files libs
+%files  %{libname}
 %{_libdir}/lib%{name}_loader.so.%{libmajor}{,.*}
 
-%files devel
+%files -n %{devname}
 %{_includedir}/%{name}
 %{_libdir}/cmake/%{name}
 %{_libdir}/pkgconfig/*.pc
