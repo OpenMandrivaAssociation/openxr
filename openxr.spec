@@ -45,7 +45,7 @@ Summary:        Libraries for writing VR and AR software
 This package contains the library needed to run programs dynamically
 linked with OpenXR.
 
-%package %{devname}
+%package -n %{devname}
 Summary:        Headers and development files of the OpenXR library
 Requires:       %{libname}%{?_isa} = %{version}-%{release}
 Provides:       %{name}-devel = %{version}-%{release}
