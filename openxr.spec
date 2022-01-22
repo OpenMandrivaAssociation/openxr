@@ -6,12 +6,12 @@
 
 
 Name:           openxr
-Version:        1.0.20
+Version:        1.0.22
 Release:        1
 Summary:        An API for writing VR and AR software
 License:        ASL 2.0
 URL:            https://github.com/KhronosGroup/%{pkgname}
-Source:         https://github.com/KhronosGroup/%OpenXR-SDK-Source/archive/refs/tags/release-%{version}/OpenXR-SDK-Source-release-%{version}.tar.gz
+Source:         https://github.com/KhronosGroup/OpenXR-SDK-Source/archive/refs/tags/release-%{version}/OpenXR-SDK-Source-release-%{version}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  glslang
