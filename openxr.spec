@@ -6,7 +6,7 @@
 
 
 Name:           openxr
-Version:        1.0.22
+Version:        1.0.23
 Release:        1
 Summary:        An API for writing VR and AR software
 License:        ASL 2.0
@@ -81,7 +81,7 @@ rm -fr %{buildroot}%{_libdir}/*.a
 %files
 %license LICENSE
 # Include license in doc otherwise build complains
-%doc CHANGELOG.SDK.md LICENSE README.md specification/README.md
+%doc CHANGELOG.SDK.md LICENSE README.md 
 %{_bindir}/*
 %{_datadir}/%{name}
 %{_libdir}/lib*.so
