@@ -6,8 +6,8 @@
 
 
 Name:           openxr
-Version:        1.0.26
-Release:        2
+Version:        1.0.27
+Release:        1
 Summary:        An API for writing VR and AR software
 License:        ASL 2.0
 URL:            https://github.com/KhronosGroup/%{pkgname}
