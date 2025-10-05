@@ -6,7 +6,7 @@
 
 
 Name:           openxr
-Version:        1.1.50
+Version:        1.1.52
 Release:        1
 Summary:        An API for writing VR and AR software
 License:        ASL 2.0
