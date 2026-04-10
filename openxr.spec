@@ -14,6 +14,7 @@ URL:            https://github.com/KhronosGroup/%{pkgname}
 Source:         https://github.com/KhronosGroup/OpenXR-SDK-Source/archive/refs/tags/release-%{version}/OpenXR-SDK-Source-release-%{version}.tar.gz
 
 BuildRequires:  cmake
+BuildRequires:  make
 BuildRequires:  glslang
 BuildRequires:  glslang-devel
 BuildRequires:  pkgconfig(egl)
