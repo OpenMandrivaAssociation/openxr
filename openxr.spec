@@ -62,7 +62,7 @@ want to compile applications using the OpenXR library.
 %cmake \
     -DBUILD_ALL_EXTENSIONS=ON \
     -DBUILD_LOADER=ON \
-    -DBUILD_TESTS=ON \
+    -DBUILD_TESTS=OFF \
     -DBUILD_WITH_STD_FILESYSTEM=OFF \
     -DBUILD_WITH_WAYLAND_HEADERS=ON \
     -DCMAKE_BUILD_TYPE=Release \
