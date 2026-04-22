@@ -83,10 +83,10 @@ rm -fr %{buildroot}%{_libdir}/*.a
 %license LICENSE
 # Include license in doc otherwise build complains
 %doc CHANGELOG.SDK.md LICENSE README.md 
-%{_bindir}/*
+#{_bindir}/*
 %{_datadir}/%{name}
 %{_libdir}/lib*.so
-%{_mandir}/man1/*.1*
+#{_mandir}/man1/*.1*
 
 %files -n %{libname}
 %{_libdir}/lib%{name}_loader.so.%{libmajor}{,.*}
